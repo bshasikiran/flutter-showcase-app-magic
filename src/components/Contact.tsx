@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Mail, GitHub, Linkedin } from 'lucide-react';
+import { Mail, Github, Linkedin } from 'lucide-react';
 import { useToast } from '@/components/ui/use-toast';
 
 const Contact = () => {
@@ -52,7 +52,7 @@ const Contact = () => {
               </div>
               
               <div className="flex items-center space-x-4">
-                <GitHub className="text-primary" size={24} />
+                <Github className="text-primary" size={24} />
                 <a 
                   href="https://github.com/bshasikiran" 
                   target="_blank" 
