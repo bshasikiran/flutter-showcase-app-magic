@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { cn } from '@/lib/utils';
+import { Code, Star, Zap } from 'lucide-react';
 
 interface Project {
   title: string;
@@ -50,37 +51,57 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="section bg-white">
+    <section id="projects" className="section bg-gradient-to-b from-muted/30 to-background">
       <div className="container mx-auto">
         <h2 className="section-title">Projects</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
-            <div key={index} className="project-card bg-white">
+            <div 
+              key={index} 
+              className="project-card hover:scale-105 transition-transform duration-300"
+              style={{
+                animationDelay: `${index * 0.1}s`,
+                animation: 'float 6s ease-in-out infinite'
+              }}
+            >
               <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                <p className="text-gray-600 mb-4">{project.description}</p>
+                <div className="flex items-start justify-between mb-2">
+                  <h3 className="text-xl font-semibold mono">{project.title}</h3>
+                  <Code size={18} className="text-primary mt-1 flex-shrink-0" />
+                </div>
+                <p className="text-gray-300 mb-4">{project.description}</p>
                 <div className="mb-4">
                   <div className="flex items-center space-x-2 mb-2">
-                    <span className="text-sm font-medium">Status:</span>
+                    <span className="text-sm font-medium text-gray-400">Status:</span>
                     <span className={cn(
                       "text-xs px-2 py-1 rounded-full",
                       project.status === "Work in progress" 
-                        ? "bg-yellow-100 text-yellow-800" 
-                        : "bg-green-100 text-green-800"
+                        ? "bg-yellow-900/30 text-yellow-300 border border-yellow-800" 
+                        : "bg-green-900/30 text-green-300 border border-green-800"
                     )}>
-                      {project.status}
+                      {project.status === "Work in progress" ? (
+                        <span className="flex items-center gap-1">
+                          <Zap size={12} className="animate-pulse" />
+                          {project.status}
+                        </span>
+                      ) : (
+                        <span className="flex items-center gap-1">
+                          <Star size={12} />
+                          {project.status}
+                        </span>
+                      )}
                     </span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <span className="text-sm font-medium">Date:</span>
-                    <span className="text-xs text-gray-600">{project.date}</span>
+                    <span className="text-sm font-medium text-gray-400">Date:</span>
+                    <span className="text-xs text-gray-300 mono">{project.date}</span>
                   </div>
                 </div>
                 <div className="flex flex-wrap gap-2 mt-3">
                   {project.technologies.map((tech, i) => (
                     <span 
                       key={i} 
-                      className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-md"
+                      className="px-2 py-1 bg-muted text-xs rounded-md border border-muted-foreground/30 hover:border-primary/50 transition-colors duration-300"
                     >
                       {tech}
                     </span>
