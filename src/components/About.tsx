@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 const About = () => {
   return (
@@ -8,11 +9,15 @@ const About = () => {
         <h2 className="section-title">About Me</h2>
         <div className="flex flex-col md:flex-row gap-8 items-center">
           <div className="md:w-1/3">
-            <div className="aspect-square rounded-full bg-gray-200 overflow-hidden">
-              {/* You can add your profile image here */}
-              <div className="w-full h-full flex items-center justify-center text-gray-500 text-6xl">
-                BSK
-              </div>
+            <div className="aspect-square rounded-full overflow-hidden border-4 border-primary shadow-lg hover:shadow-xl transition-all duration-300">
+              <Avatar className="w-full h-full">
+                <AvatarImage 
+                  src="/lovable-uploads/d8d1500c-4646-493c-9436-2010c3f5fcdc.png" 
+                  alt="Betala Shasi Kiran" 
+                  className="object-cover"
+                />
+                <AvatarFallback className="text-6xl">BSK</AvatarFallback>
+              </Avatar>
             </div>
           </div>
           <div className="md:w-2/3">
