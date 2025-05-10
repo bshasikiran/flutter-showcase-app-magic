@@ -83,7 +83,7 @@ const About = () => {
                 </span>
               </a>
               <a 
-                href="https://joi-eight-alpha.vercel.app/" 
+                href="https://portfolio-max-6kqq.onrender.com/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="px-4 py-2 bg-gradient-to-r from-primary/80 to-primary text-white rounded-md hover:from-primary/70 hover:to-primary/90 transition-all duration-300 hover:-translate-y-1 shadow-lg shadow-primary/20 group"
