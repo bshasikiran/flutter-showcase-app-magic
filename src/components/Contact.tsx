@@ -82,12 +82,12 @@ const Contact = () => {
                     <Linkedin className="text-primary" size={24} />
                   </div>
                   <a 
-                    href="https://www.linkedin.com/in/betala-shasi-kiran" 
+                    href="https://www.linkedin.com/in/betala-shasi-kiran-4aa943252" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="text-gray-300 hover:text-primary transition-colors"
                   >
-                    linkedin.com/in/betala-shasi-kiran
+                    linkedin.com/in/betala-shasi-kiran-4aa943252
                   </a>
                 </div>
               </div>
